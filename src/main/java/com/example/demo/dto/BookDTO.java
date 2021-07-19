@@ -7,6 +7,10 @@
  */
 package com.example.demo.dto;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.BeanUtils;
 
 import com.example.demo.domain.Book;
@@ -14,9 +18,13 @@ import com.example.demo.util.CustomBeanUtils;
 
 public class BookDTO {
 
+    @NotBlank
     private String author;
+    @Length(max=20)
     private String description;
+    @NotBlank
     private String name;
+    @NotNull
     private Integer status;
     public BookDTO() {    }
     public String getAuthor() {
@@ -47,6 +55,10 @@ public class BookDTO {
     public void convertToBook(Book book) {
         new BookConvert().convert(BookDTO.this, book);
     }
+
+    public Book convertToBook() {
+        return new BookConvert().convert(BookDTO.this);
+    }
     
     private class BookConvert implements Convert<BookDTO, Book>{
 
@@ -58,7 +70,9 @@ public class BookDTO {
 
         @Override
         public Book convert(BookDTO s) {
-            return null;
+            Book book = new Book();
+            BeanUtils.copyProperties(BookDTO.this, book);
+            return book;
         }
         
         

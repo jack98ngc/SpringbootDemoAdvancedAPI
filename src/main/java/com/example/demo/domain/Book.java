@@ -11,18 +11,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 public class Book {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    
     private Long id;
-    private String name;
     private String author;
-    private Integer status;
     private String description;
+    private String name;
+    private Integer status;
     
     public Book() {
     }
