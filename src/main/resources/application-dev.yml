@@ -3,3 +3,7 @@ logging:
   level:
     root: debug
     com.example: debug
+#  file: devlog/my.log
+  file: D:/temp/my.log
+#  path: devlog/my.log
+#  path: D:/temp/my.log
