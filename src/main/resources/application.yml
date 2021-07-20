@@ -12,9 +12,12 @@ spring:
     hibernate: 
       ddl-auto: update
     show-sql: true
-    
-logging:
-  level:
-    root: info
-    com.example: DEBUG
-  file: logs/debug.log        
+
+  profiles:    active: dev
+
+#logging:
+#  level:
+#    root: info
+#    com.example: DEBUG
+#    org.springframework.web: warn
+#  file: logs/debug.log        
