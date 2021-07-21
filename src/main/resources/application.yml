@@ -15,7 +15,8 @@ spring:
 
   profiles:    active: dev
 
-#logging:
+logging:
+  config: classpath:logback-custom.xml
 #  level:
 #    root: info
 #    com.example: DEBUG
