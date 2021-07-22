@@ -21,12 +21,13 @@ public class LogTestApi {
         
         String name = "zhang";
         String email = "hell@111.com";
-        logger.error("error --- log");
-        logger.warn("warn --- log");
-        logger.info("info --- log");
-        logger.debug("debug--- log");
-        logger.trace("trace--- log");
-        logger.info("name : {}, email : {}");
+        logger.error("-------- log ------------");
+//        logger.error("error --- log");
+//        logger.warn("warn --- log");
+//        logger.info("info --- log");
+//        logger.debug("debug--- log");
+//        logger.trace("trace--- log");
+//        logger.info("name : {}, email : {}", name, email);
         return "log-list";
     }
 }
